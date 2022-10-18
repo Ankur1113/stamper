@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3 class="display-4">Stemper Demo</h3>
+    <br />
+    <form asp-action="Index" asp-controller="Home" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Select File :  </label>
+                    <input type="file" name="fromfile" id="fromfile" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Attach Stamp" class="btn-sm btn-success" />
+                    <input type="reset" value="Reset" class="btn-sm btn-dark" />
+                </div>
+            </div>
+        </div>       
+    </form>
+
+    @if (ViewBag.Error != null)
+    {   <br />
+        <h6 class="text-danger">@ViewBag.Error</h6>
+    }
+</div>
